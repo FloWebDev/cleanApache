@@ -6,9 +6,9 @@ Le script cleanApache sert à supprimer l'ensemble des logs du serveur Apache in
 
 **Attention, ce script n'effectue aucune copie des logs. Les logs seront définitivement supprimés.**
 
-Pour utiliser le script, vous devez tout d'abord rendre celui-ci exécutable avec la commande suivante (en vous positionnant dans le dossier où vous avez enregistré le script) :
+Pour utiliser le script, vous devez tout d'abord rendre celui-ci exécutable avec la commande suivante (avec les droits root et en vous plaçant dans le dossier du script) :
 
-`chmod +x cleanapache`
+`sudo chmod +x cleanapache`
 
 Vous pourrez ensuite effectuer la commande suivante pour exécuter le script :
 
