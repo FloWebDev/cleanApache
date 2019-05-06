@@ -1,0 +1,18 @@
+#!/bin/bash
+
+taille=`du -h /var/log/apache2/`
+
+#Suppression du dossier "apache2",
+#et de tous les logs stockés
+#Attention, aucune copie effectuée !
+rm -fr /var/log/apache2/
+
+#Création du nouveau dossier de log "apache2"
+mkdir /var/log/apache2/
+
+#Redémarrage serveur
+#pour prise en compte du nouveau dossier
+systemctl restart apache2
+
+#Message de confirmation
+echo -e "Suppression des logs réussie !\nEspace gagné : $taille"

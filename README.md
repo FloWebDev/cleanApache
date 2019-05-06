@@ -32,5 +32,3 @@ Voici les noms de quelques-uns des principaux shells qui existent.
 - csh : C Shell. Un shell utilisant une syntaxe proche du langage C.
 - tcsh : Tenex C Shell. Amélioration du C Shell.
 - zsh : Z Shell. Shell assez récent reprenant les meilleures idées de bash, ksh et tcsh.
-# cleanApache
-# cleanApache
