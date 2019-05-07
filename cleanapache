@@ -1,18 +1,29 @@
 #!/bin/bash
 
-taille=`du -h /var/log/apache2/`
+size=`du -h /var/log/apache2/`
+
+#Affichage de la taille du dossier "apache2"
+echo -e "Taille actuelle du dossier des logs Apache :\n$size"
+
+#Demande de confirmation avant suppression
+read -p 'Confirmer la suppressionn (aucune copie effectuée) ? [y/n] : ' confirmation
+
+if [ "$confirmation" != "y" ] && [ "$confirmation" != "Y" ] && [ "$confirmation" != "o" ] && [ "$confirmation" != "O" ]
+then
+        echo "Rassurez-vous ! Aucune donnée n'a été supprimée !"
+        #Arrêt du script (aucune suppression)
+		exit
+fi
 
 #Suppression du dossier "apache2",
 #et de tous les logs stockés
-#Attention, aucune copie effectuée !
 rm -fr /var/log/apache2/
 
-#Création du nouveau dossier de log "apache2"
+#Création du nouveau dossier de logs "apache2"
 mkdir /var/log/apache2/
 
-#Redémarrage serveur
-#pour prise en compte du nouveau dossier
+#Redémarrage serveur Apache
 systemctl restart apache2
 
 #Message de confirmation
-echo -e "Suppression des logs réussie !\nEspace gagné : $taille"
+echo -e "Suppression des logs réussie !\nEspace gagné : $size"
